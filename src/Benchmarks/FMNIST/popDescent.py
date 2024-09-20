@@ -39,6 +39,10 @@ tf.config.run_functions_eagerly(True)
 # DATA
 import dataset
 dataset = dataset.preprocess_dataset()
+optimization.load_data(dataset)
+observation.load_data(dataset)
+evaluation.load_data(dataset)
+
 
 
 
@@ -61,7 +65,6 @@ def main():
 		print(""), print("MAJOR ITERATION %s: " % (i+1)), print("")
 
 		utils.Set_Seed(training_parameters.SEED[i])
-		optimization.load_data(dataset)
 
 		# create_Parameters_NN_object creates pdFunctionsClass object to call proper popDescent Functions
 		# pass in with_reg arg to choose which model to build

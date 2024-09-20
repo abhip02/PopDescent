@@ -1,11 +1,17 @@
 import numpy as np
 
 # DATA
-import dataset
-dataset = dataset.preprocess_dataset()
-
-train_images, train_labels, validation_images, validation_labels, test_images, test_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels, dataset.test_images, dataset.test_labels
-
+# load dataset, loss function for optimization/evaluation for dataset
+train_images, train_labels, validation_images, validation_labels, lossfn = None, None, None, None, None
+def load_data(dataset):
+	global train_images
+	global train_labels
+	global validation_images
+	global validation_labels
+	global lossfn
+ 
+	train_images, train_labels, validation_images, validation_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels
+	lossfn = dataset.lossfn
 
 def return_objective(sklHO, training_parameters):
     def objective_func(params):

@@ -19,11 +19,14 @@ import csv
 import models
 # PD functions
 from src import utils
-from src.Benchmarks.hpSUtils import optimization, evaluation, hpS_parameters
+from src.Benchmarks.hpSUtils import optimization, observation, evaluation, hpS_parameters
 
 # DATA
 import dataset
 dataset = dataset.preprocess_dataset()
+optimization.load_data(dataset)
+observation.load_data(dataset)
+evaluation.load_data(dataset)
 
 train_images, train_labels, validation_images, validation_labels, test_images, test_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels, dataset.test_images, dataset.test_labels
 

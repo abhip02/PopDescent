@@ -1,14 +1,17 @@
 import tensorflow as tf
 import numpy as np
 
-# load dataset, loss function for optimization/evaluation for CIFAR100
-from src.Benchmarks.CIFAR100 import dataset
-dataset = dataset.preprocess_dataset()
-
-train_images, train_labels, test_images, test_labels = dataset.train_images, dataset.train_labels, dataset.test_images, dataset.test_labels
-
 from src import utils
-lossfn = dataset.lossfn
+
+# DATA
+# load dataset, loss function for optimization/evaluation for CIFAR100
+dataset = None
+def load_data(dataset_input):
+    global dataset
+    global lossfn
+
+    dataset = dataset_input
+    lossfn = dataset.lossfn
 
 # returns training and test loss (UNNORMALIZED) on data chosen with random seed
 def evaluator(NN_object):

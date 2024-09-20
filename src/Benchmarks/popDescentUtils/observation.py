@@ -2,13 +2,21 @@ import tensorflow as tf
 import numpy as np
 
 # load dataset, loss function for optimization/evaluation for CIFAR100
-from src.Benchmarks.CIFAR100 import dataset
-dataset = dataset.preprocess_dataset()
-
-validation_images, validation_labels = dataset.validation_images, dataset.validation_labels
+# from src.Benchmarks.CIFAR100 import dataset
+# dataset = dataset.preprocess_dataset()
 
 from src import utils
-lossfn = dataset.lossfn
+
+# load dataset, loss function for optimization/evaluation for CIFAR100
+validation_images, validation_labels, lossfn = None, None, None
+def load_data(dataset):
+	global validation_images
+	global validation_labels
+	global lossfn
+ 
+	validation_images, validation_labels = dataset.validation_images, dataset.validation_labels
+	lossfn = dataset.lossfn
+
 
 # unnormalized
 def observer(NN_object, tIndices):

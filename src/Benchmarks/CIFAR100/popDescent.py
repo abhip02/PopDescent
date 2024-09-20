@@ -40,6 +40,8 @@ tf.config.run_functions_eagerly(True)
 import dataset
 dataset = dataset.preprocess_dataset()
 optimization.load_data(dataset)
+observation.load_data(dataset)
+evaluation.load_data(dataset)
 
 
 

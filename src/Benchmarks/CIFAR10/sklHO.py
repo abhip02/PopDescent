@@ -19,6 +19,8 @@ from src.Benchmarks.sklHOUtils import sklHO_parameters, space_definition, object
 # DATA
 import dataset
 dataset = dataset.preprocess_dataset()
+objective_function.load_data(dataset)
+evaluation.load_data(dataset)
 
 train_images, train_labels, validation_images, validation_labels, test_images, test_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels, dataset.test_images, dataset.test_labels
 

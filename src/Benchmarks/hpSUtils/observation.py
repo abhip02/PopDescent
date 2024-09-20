@@ -1,9 +1,14 @@
 # DATA
-import dataset
-dataset = dataset.preprocess_dataset()
-train_images, train_labels, validation_images, validation_labels, test_images, test_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels, dataset.test_images, dataset.test_labels
-
-lossfn = dataset.lossfn
+# DATA
+# load dataset, loss function for optimization/evaluation for CIFAR100
+test_images, test_labels, lossfn = None, None, None
+def load_data(dataset):
+	global test_images
+	global test_labels
+	global lossfn
+ 
+	test_images, test_labels = dataset.test_images, dataset.test_labels
+	lossfn = dataset.lossfn
 
 # observing optimization progress
 # unnormalized

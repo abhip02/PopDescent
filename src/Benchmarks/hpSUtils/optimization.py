@@ -2,12 +2,20 @@ import tensorflow as tf
 import numpy as np
 from tqdm import tqdm
 
-# DATA
-import dataset
-dataset = dataset.preprocess_dataset()
-train_images, train_labels, validation_images, validation_labels, test_images, test_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels, dataset.test_images, dataset.test_labels
-
 from src.Benchmarks.hpSUtils import observation
+
+# DATA
+# load dataset, loss function for optimization/evaluation for CIFAR100
+train_images, train_labels, validation_images, validation_labels, lossfn = None, None, None, None, None
+def load_data(dataset):
+	global train_images
+	global train_labels
+	global validation_images
+	global validation_labels
+	global lossfn
+ 
+	train_images, train_labels, validation_images, validation_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels
+	lossfn = dataset.lossfn
 
 def optimizer(population, training_parameters, reg_list, observer_history):
     with tf.device('/device:GPU:0'):
