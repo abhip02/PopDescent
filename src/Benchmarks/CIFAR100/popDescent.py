@@ -39,11 +39,7 @@ tf.config.run_functions_eagerly(True)
 # DATA
 import dataset
 dataset = dataset.preprocess_dataset()
-
-
-
-
-
+optimization.load_data(dataset)
 
 
 
@@ -68,7 +64,7 @@ def main():
 
 		# create_Parameters_NN_object creates pdFunctionsClass object to call proper popDescent Functions
 		# pass in with_reg arg to choose which model to build
-		Parameters_object, model_num = ParametersClass.create_Parameters_NN_object(training_parameters, with_reg)
+		Parameters_object, model_num = ParametersClass.create_Parameters_NN_object(models, training_parameters, with_reg)
 
 		#creating lists to store data
 		loss_data, acc_data, total_test_loss, batch_test_loss, total_test_acc = [], [], [], [], []

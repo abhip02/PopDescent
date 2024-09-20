@@ -16,8 +16,8 @@ from collections import namedtuple
 import statistics
 import dataclasses
 from dataclasses import dataclass
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras import datasets, layers, models
+# from tensorflow.keras.optimizers import Adam
+# from tensorflow.keras import datasets, layers
 import tensorflow as tf
 
 
@@ -43,10 +43,6 @@ dataset = dataset.preprocess_dataset()
 
 
 
-
-
-
-
 # use argparse to parse if with regularization or not
 # python3 -m KT_RandomSearch_CIFAR100_Benchmark_with_regularization --with_reg
 
@@ -65,10 +61,11 @@ def main():
 		print(""), print("MAJOR ITERATION %s: " % (i+1)), print("")
 
 		utils.Set_Seed(training_parameters.SEED[i])
+		optimization.load_data(dataset)
 
 		# create_Parameters_NN_object creates pdFunctionsClass object to call proper popDescent Functions
 		# pass in with_reg arg to choose which model to build
-		Parameters_object, model_num = ParametersClass.create_Parameters_NN_object(training_parameters, with_reg)
+		Parameters_object, model_num = ParametersClass.create_Parameters_NN_object(models, training_parameters, with_reg)
 
 		#creating lists to store data
 		loss_data, acc_data, total_test_loss, batch_test_loss, total_test_acc = [], [], [], [], []

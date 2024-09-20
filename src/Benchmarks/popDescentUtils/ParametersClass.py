@@ -1,6 +1,6 @@
 # from src.Benchmarks.popDescentUtils.pdFunctionsClass import return_pd_functions
 from . import pdFunctionsClass
-from src.Benchmarks.CIFAR100 import models
+# from src.Benchmarks.CIFAR100 import models
 
 import typing
 from typing import TypeVar, Generic
@@ -123,7 +123,7 @@ def Parameter_class_evaluator(population):
 
 
 # make model
-def create_Parameters_NN_object(training_parameters, with_reg):
+def create_Parameters_NN_object(models, training_parameters, with_reg):
     history = []
     pd_functions = pdFunctionsClass.return_pd_functions()
     # creates Parameter object to pass into Population Descent

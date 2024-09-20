@@ -2,15 +2,20 @@ import tensorflow as tf
 import numpy as np
 
 from tqdm import tqdm
+from src import utils
 
 # load dataset, loss function for optimization/evaluation for CIFAR100
-from src.Benchmarks.CIFAR100 import dataset
-dataset = dataset.preprocess_dataset()
+train_images, train_labels, validation_images, validation_labels, lossfn = None, None, None, None, None
+def load_data(dataset):
+	global train_images
+	global train_labels
+	global validation_images
+	global validation_labels
+	global lossfn
+ 
+	train_images, train_labels, validation_images, validation_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels
+	lossfn = dataset.lossfn
 
-train_images, train_labels, validation_images, validation_labels = dataset.train_images, dataset.train_labels, dataset.validation_images, dataset.validation_labels
-
-from src import utils
-lossfn = dataset.lossfn
 
 # calls gradient steps to train model, returns NORMALIZED training and validation loss
 def optimizer(NN_object, training_parameters):

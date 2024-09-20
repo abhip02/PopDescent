@@ -84,7 +84,6 @@ def hpS(with_reg):
 			tf.keras.layers.Conv2D(filters=128, kernel_size=(3,3), strides=(2,2), dilation_rate=(1,1), activation='relu'),
 			tf.keras.layers.Conv2D(filters=256, kernel_size=(3,3), dilation_rate=(1,1), activation='relu'),
 
-
 			tf.keras.layers.Flatten(),
 			tf.keras.layers.Dense(1024, kernel_regularizer=regularization_amount[r]),
 			tf.keras.layers.Activation('relu'),
@@ -132,6 +131,7 @@ def sklHO(with_reg, params):
 
 # Testing population descent
 def PD(with_reg):
+	model_num = "model 4"
 	regularizer = tf.keras.regularizers.l2(l=1e-3) if with_reg else None
 	
 	FM_input_shape = (28, 28, 1)

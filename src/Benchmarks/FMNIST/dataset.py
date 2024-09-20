@@ -3,7 +3,7 @@ import tensorflow as tf
 
 
 @dataclass
-class CIFAR10Dataset:
+class FMNISTDataset:
     name: str
     lossfn: tf.Tensor
     train_images: tf.Tensor
@@ -27,4 +27,4 @@ def preprocess_dataset():
     
     print("FMNIST")
 
-    return CIFAR10Dataset("FMNIST", lossfn, train_images, train_labels, validation_images, validation_labels, test_images, test_labels)
+    return FMNISTDataset("FMNIST", lossfn, train_images, train_labels, validation_images, validation_labels, test_images, test_labels)
