@@ -1,1 +1,1 @@
-"PopDescent" (Population Descent) is a novel global optimization algorithm that more efficiently reaches lower test losses than existing methods (optimization schedulers, HyperOpt, KerasTuner). This repository is the package to import PopDescent and run it. Benchmark tests are also provided, and can be run individually with or without k2 regularization kernels added.
+https://arxiv.org/abs/2310.14671
