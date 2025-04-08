@@ -21,7 +21,7 @@ class hpS_parameters:
 def return_parameters():
     SEED = [5, 15, 24, 34, 49, 60, 74, 89, 97, 100]
 
-    iterations = 1
+    iterations = 10
 
     # gradient descent parameters
     batch_size = 64
