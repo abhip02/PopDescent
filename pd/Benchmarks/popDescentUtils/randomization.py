@@ -5,6 +5,12 @@ from collections import namedtuple
 
 NN_Individual = namedtuple("NN_Individual", ["nn", "opt_obj", "LR_constant", "reg_constant"])
 
+# For Google Colab Keras 3: need to pass new optimizer with new model
+def clone_optimizer(opt):
+	# Shallow clone with the same config
+	config = opt.get_config()
+	return opt.__class__.from_config(config)
+
 
 def randomizer(NN_object, normalized_amount, input_factor):
 	# original: (0, 1e-3), (0, normalized_amount), (0, normalized amount)
@@ -36,7 +42,9 @@ def randomizer(NN_object, normalized_amount, input_factor):
 		mu, sigma = 0, (normalized_amount*factor) # 0.7, 1, 10,x 0.3
 		randomization = 2**(np.random.normal(mu, sigma))
 		new_LR_constant = (NN_object.LR_constant) * randomization
+  
+		new_optimizer = clone_optimizer(NN_object.opt_obj)
 
-		new_NN_Individual = NN_Individual(model_clone, NN_object.opt_obj, new_LR_constant, new_reg_constant) # without randoimzed LR
+		new_NN_Individual = NN_Individual(model_clone, new_optimizer, new_LR_constant, new_reg_constant) # without randoimzed LR
 
 	return new_NN_Individual
