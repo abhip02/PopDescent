@@ -67,7 +67,7 @@ def ktRSm(training_parameters, with_reg, with_sch):
             hp_learning_rate = hp.Float("lr", min_value=training_parameters.lr_min_value, max_value=training_parameters.lr_max_value, sampling="log")
 
             model.compile(
-                optimizer=keras.optimizers.legacy.Adam(learning_rate=hp_learning_rate),
+                optimizer=keras.optimizers.Adam(learning_rate=hp_learning_rate),
                 loss=keras.losses.CategoricalCrossentropy(),
                 metrics=["accuracy"]
             )
@@ -147,7 +147,7 @@ def PD(with_reg):
     # model.add(tf.keras.layers.Attention())
     model.add(TimeDistributed(Dense(tar_vocab, activation='softmax', kernel_regularizer=regularizer)))
 
-    optimizer = tf.keras.optimizers.legacy.Adam(learning_rate=1e-3) # 1e-3 (for FMNIST)
+    optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3) # 1e-3 (for FMNIST)
     LR_constant = 10**(np.random.normal(-4, 2))
     reg_constant = 10**(np.random.normal(0, 2))
 
