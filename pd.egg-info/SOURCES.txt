@@ -1,8 +1,8 @@
 README.md
 setup.py
-./pd/__init__.py
-./pd/populationDescent.py
-./pd/utils.py
+pd/__init__.py
+pd/populationDescent.py
+pd/utils.py
 pd.egg-info/PKG-INFO
 pd.egg-info/SOURCES.txt
 pd.egg-info/dependency_links.txt
