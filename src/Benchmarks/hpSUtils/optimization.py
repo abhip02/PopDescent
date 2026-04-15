@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 from tqdm import tqdm
 
-from popDescentPackage.Benchmarks.hpSUtils import observation
+from src.Benchmarks.hpSUtils import observation
 
 # DATA
 # load dataset, loss function for optimization/evaluation for CIFAR100

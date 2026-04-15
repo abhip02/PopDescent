@@ -105,7 +105,7 @@ def individual_to_params(
 
 
 # import "evaluator" from evaluation:
-from popDescentPackage.Benchmarks.popDescentUtils import evaluation
+from src.Benchmarks.popDescentUtils import evaluation
 # External Evaluator
 def Parameter_class_evaluator(population):
 	pop_train_loss, pop_test_loss = [], []

@@ -1,4 +1,4 @@
-from popDescentPackage import utils
+from src import utils
 
 def evaluate_model(model, dataset, batch_size):
 	print(""), print(""), print("Evaluating models on test data after randomization")

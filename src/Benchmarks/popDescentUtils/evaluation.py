@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-from popDescentPackage import utils
+from src import utils
 
 # DATA
 # load dataset, loss function for optimization/evaluation for CIFAR100

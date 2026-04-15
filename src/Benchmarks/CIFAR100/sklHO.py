@@ -13,8 +13,8 @@ import csv
 from hyperopt import fmin, tpe, hp
 
 from models import sklHO
-from popDescentPackage import utils
-from popDescentPackage.Benchmarks.sklHOUtils import sklHO_parameters, space_definition, objective_function, evaluation
+from src import utils
+from src.Benchmarks.sklHOUtils import sklHO_parameters, space_definition, objective_function, evaluation
 
 # DATA
 import dataset

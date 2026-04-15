@@ -5,7 +5,7 @@ import numpy as np
 # from pd.Benchmarks.CIFAR100 import dataset
 # dataset = dataset.preprocess_dataset()
 
-from popDescentPackage import utils
+from src import utils
 
 # load dataset, loss function for optimization/evaluation for CIFAR100
 validation_images, validation_labels, lossfn = None, None, None

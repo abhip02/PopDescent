@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-from popDescentPackage import utils
+from src import utils
 
 # load dataset, loss function for optimization/evaluation for CIFAR100
 # load dataset, loss function for optimization/evaluation for CIFAR100
@@ -11,7 +11,7 @@ def load_data(dataset_input):
     dataset = dataset_input
 
 
-from popDescentPackage import utils
+from src import utils
 
 def evaluator(model, training_parameters):
     random_batch_train_images, random_batch_train_labels, random_batch_test_images, random_batch_test_labels = utils.random_eval_set_generator(dataset, training_parameters.batch_size)

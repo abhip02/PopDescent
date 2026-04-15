@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 from tqdm import tqdm
-from popDescentPackage import utils
+from src import utils
 
 # load dataset, loss function for optimization/evaluation for CIFAR100
 train_images, train_labels, validation_images, validation_labels, lossfn = None, None, None, None, None

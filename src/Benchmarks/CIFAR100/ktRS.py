@@ -13,8 +13,8 @@ import csv
 
 # import models # for CIFAR100
 from models import ktRSm
-from popDescentPackage import utils
-from popDescentPackage.Benchmarks.ktRSUtils import ktRS_parameters, define_tuner, train_model, evaluation, graph_history
+from src import utils
+from src.Benchmarks.ktRSUtils import ktRS_parameters, define_tuner, train_model, evaluation, graph_history
 
 
 # DATA

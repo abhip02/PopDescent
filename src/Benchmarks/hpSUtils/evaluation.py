@@ -4,7 +4,7 @@ import numpy as np
 from tqdm import tqdm
 import statistics
 
-from popDescentPackage import utils
+from src import utils
 
 # DATA
 # load dataset, loss function for optimization/evaluation for CIFAR100

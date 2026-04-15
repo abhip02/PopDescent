@@ -18,8 +18,8 @@ import csv
 # from populationDescent import populationDescent
 import models
 # PD functions
-from popDescentPackage import utils
-from popDescentPackage.Benchmarks.hpSUtils import optimization, observation, evaluation, hpS_parameters
+from src import utils
+from src.Benchmarks.hpSUtils import optimization, observation, evaluation, hpS_parameters
 
 # DATA
 import dataset

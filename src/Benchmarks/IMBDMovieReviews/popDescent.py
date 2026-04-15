@@ -25,8 +25,8 @@ import tensorflow as tf
 # from populationDescent import populationDescent
 import models
 # PD functions
-from popDescentPackage import utils, populationDescent
-from popDescentPackage.Benchmarks.popDescentUtils import ParametersClass, popDescent_parameters, optimization, randomization, observation, evaluation
+from src import utils, populationDescent
+from src.Benchmarks.popDescentUtils import ParametersClass, popDescent_parameters, optimization, randomization, observation, evaluation
 
 
 
